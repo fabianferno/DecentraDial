@@ -1,0 +1,152 @@
+{
+  "name": "template",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@apollo/client": "3.7.1",
+    "@biconomy/core-types": "0.0.2",
+    "@biconomy/smart-account": "0.0.2",
+    "@biconomy/web3-auth": "0.0.2",
+    "@headlessui/react": "1.7.4",
+    "@heroicons/react": "2.0.13",
+    "@reduxjs/toolkit": "1.8.5",
+    "@testing-library/jest-dom": "5.16.5",
+    "@testing-library/react": "13.4.0",
+    "@types/fontfaceobserver": "^2.1.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^14.18.27",
+    "@types/react": "^18.0.20",
+    "@types/react-dom": "^18.0.6",
+    "@types/react-redux": "^7.1.24",
+    "@types/react-test-renderer": "^18.0.0",
+    "@types/rimraf": "^3.0.2",
+    "@types/shelljs": "^0.8.11",
+    "@types/styled-components": "^5.1.26",
+    "@types/testing-library__jest-dom": "^5.14.5",
+    "@types/webpack": "^5.28.0",
+    "@types/webpack-env": "^1.18.0",
+    "chalk": "4.1.2",
+    "cross-env": "7.0.3",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "ethers": "5.7.2",
+    "fontfaceobserver": "2.3.0",
+    "graphql": "16.6.0",
+    "husky": "8.0.1",
+    "i18next": "21.9.2",
+    "i18next-browser-languagedetector": "6.1.5",
+    "i18next-scanner": "4.0.0",
+    "inquirer": "7.3.3",
+    "inquirer-directory": "2.2.0",
+    "jest-styled-components": "7.1.1",
+    "lint-staged": "13.0.3",
+    "nft.storage": "7.0.0",
+    "node-plop": "0.26.3",
+    "omit-deep": "0.3.0",
+    "plop": "2.7.6",
+    "prettier": "2.7.1",
+    "react": "18.2.0",
+    "react-app-polyfill": "3.0.0",
+    "react-dom": "18.2.0",
+    "react-helmet-async": "1.3.0",
+    "react-i18next": "11.18.6",
+    "react-is": "18.2.0",
+    "react-redux": "7.2.8",
+    "react-router-dom": "6.3.0",
+    "react-scripts": "5.0.1",
+    "react-test-renderer": "18.2.0",
+    "redux-injectors": "1.3.0",
+    "redux-saga": "1.2.1",
+    "rimraf": "3.0.2",
+    "sanitize.css": "13.0.0",
+    "serve": "14.0.1",
+    "shelljs": "0.8.5",
+    "styled-components": "5.3.5",
+    "stylelint": "14.12.0",
+    "stylelint-config-recommended": "9.0.0",
+    "stylelint-config-styled-components": "0.1.1",
+    "stylelint-processor-styled-components": "1.10.0",
+    "ts-node": "10.9.1",
+    "typescript": "4.6.4",
+    "urql": "2.2.0",
+    "web-vitals": "2.1.4",
+    "webpack": "5.75.0"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject",
+    "start:prod": "yarn run build && serve -s build",
+    "test:generators": "ts-node ./internals/testing/generators/test-generators.ts",
+    "checkTs": "tsc --noEmit",
+    "eslint": "eslint --ext js,ts,tsx",
+    "lint": "yarn run eslint src",
+    "lint:fix": "yarn run eslint --fix src",
+    "lint:css": "stylelint src/**/*.css",
+    "generate": "plop --plopfile internals/generators/plopfile.ts",
+    "prettify": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "extract-messages": "i18next-scanner --config=internals/extractMessages/i18next-scanner.config.js",
+    "prepare": "husky install"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=14.x"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "yarn run eslint --fix"
+    ],
+    "*.{md,json}": [
+      "prettier --write"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/**/*/*.d.ts",
+      "!src/**/*/Loadable.{js,jsx,ts,tsx}",
+      "!src/**/*/messages.ts",
+      "!src/**/*/types.ts",
+      "!src/index.tsx"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    }
+  },
+  "devDependencies": {
+    "@tailwindcss/aspect-ratio": "0.4.2",
+    "@tailwindcss/forms": "0.5.3",
+    "assert": "^2.0.0",
+    "autoprefixer": "10.4.13",
+    "browserify-zlib": "^0.2.0",
+    "crypto-browserify": "^3.12.0",
+    "https-browserify": "^1.0.0",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1",
+    "postcss": "8.4.19",
+    "process": "^0.11.10",
+    "react-app-rewired": "^2.2.1",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "tailwindcss": "3.2.4",
+    "url": "^0.11.0"
+  }
+}
